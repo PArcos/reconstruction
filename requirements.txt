@@ -1,0 +1,6 @@
+parse==1.19
+open3d==0.15
+opencv==4.5
+ipyplot==1.1
+more_itertools==8.13
+tqdm==4.60
