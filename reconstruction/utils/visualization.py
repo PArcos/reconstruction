@@ -1,5 +1,4 @@
 from typing import List, Union
-import math
 import numpy as np
 import open3d as o3d
 import matplotlib.pyplot as plt
@@ -27,6 +26,7 @@ def visualize_geometry(geometry: List[o3d.geometry.PointCloud], flip: bool = Fal
         for g in geometry:
             g.transform(flip_transform)
 
+    # TODO: We can use an offscreen renderer so we don't need to open a window
     visualizer = o3d.visualization.Visualizer()
     visualizer.create_window()
     for g in geometry:
