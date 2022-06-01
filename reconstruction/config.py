@@ -14,9 +14,4 @@ class Config:
     depth_max: float
     depth_min: float
     fragment_size: int = 8
-    """
-    The number of fragments to use for each block."""
     debug: bool = False
-
-    class Config:
-        arbitrary_types_allowed = True

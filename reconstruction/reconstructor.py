@@ -14,7 +14,7 @@ log = logging.getLogger(__name__)
 log.setLevel(logging.INFO)
 
 
-class ClassicReconstructor():
+class Reconstructor():
     def __init__(self, config: Config):
         self.config = config
 

@@ -6,11 +6,15 @@ We are asked to reconstruct a 3D model from a series of images and depth resourc
 ![Problem data](/docs/problem-data.jpg)
 
 ## How to install?
-To install dependencies run 'pip install -r requirements.txt'
+To install dependencies run `pip install -r requirements.txt`
 
 ## Where to start?
+You can run the cli.py
+* [Dataset](/notebooks/dataset_notebook.ipynb): Visualization & exploration of the provided data.
+* [Reconstruction](/notebooks/reconstruction_notebook.ipynb): Exploration of reconstruction results 
+* [Image matching](/notebooks/image_matching.ipynb): Exploration of image matching for visual odometry
+* [Point cloud registration](/notebooks/point_cloud_registration.ipynb): Exploration of 3D data registration
 To see the reconstruction results you can go to the reconstruction notebook. From there I have different tests to implement 3D point cloud registration and image registration. Additionally, I have tests to do 
-
 
 ## High level proposal
 - [x] Build overlapping fragments
