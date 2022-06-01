@@ -36,6 +36,7 @@ def main(data_dir: str = typer.Argument("data/3d-scans-cap-black-glossy-ha-2019-
         depth_scale,
         depth_max,
         depth_min,
+        fragment_size,
         debug
     )
 
@@ -44,7 +45,9 @@ def main(data_dir: str = typer.Argument("data/3d-scans-cap-black-glossy-ha-2019-
     reconstructor = Reconstructor(config)
     volume = reconstructor.reconstruct(dataset)
     mesh = volume.extract_triangle_mesh()
+
     o3d.visualization.draw_geometries([mesh.to_legacy()])
+
 
 if __name__ == "__main__":
     typer.run(main)
