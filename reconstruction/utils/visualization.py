@@ -20,11 +20,16 @@ def visualize_trajectory(transforms: List[np.ndarray]):
     visualize_geometry(meshes)
 
 
-def visualize_geometry(geometry: List[o3d.geometry.PointCloud], flip: bool = False):
+def visualize_geometry(geometry: List[o3d.geometry.PointCloud], flip: bool = False, rotate: bool = False):
     if flip:
         flip_transform = [[1, 0, 0, 0], [0, -1, 0, 0], [0, 0, -1, 0], [0, 0, 0, 1]]
         for g in geometry:
             g.transform(flip_transform)
+
+    if rotate:
+        for g in geometry:
+            rot = g.get_rotation_matrix_from_xzy(np.array([-np.pi/4, np.pi/4, 0]))
+            g.rotate(rot)
 
     # TODO: We can use an offscreen renderer so we don't need to open a window
     visualizer = o3d.visualization.Visualizer()

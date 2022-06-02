@@ -15,7 +15,10 @@ def main(data_dir: str = typer.Argument("data/3d-scans-cap-black-glossy-ha-2019-
     depth_max: float = typer.Option(0.5),
     depth_min: float = typer.Option(0.01),
     fragment_size: int = typer.Option(8),
-    debug: bool = typer.Option(False)):
+    max_correspondence_distance: float = typer.Option(0.015),
+    icp_iterations: int = typer.Option(100),
+    register_point_clouds: bool = typer.Option(False),
+    match_images: bool = typer.Option(False)):
     """
     Performs reconstruction of the provided directory and visualizes results
     """
@@ -37,14 +40,17 @@ def main(data_dir: str = typer.Argument("data/3d-scans-cap-black-glossy-ha-2019-
         depth_max,
         depth_min,
         fragment_size,
-        debug
+        max_correspondence_distance,
+        icp_iterations,
+        register_point_clouds,
+        match_images
     )
 
     config.device = device or config.device
 
     reconstructor = Reconstructor(config)
     volume = reconstructor.reconstruct(dataset)
-    mesh = volume.extract_triangle_mesh()
+    mesh = volume.extract_point_cloud(0.01)
 
     o3d.visualization.draw_geometries([mesh.to_legacy()])
 

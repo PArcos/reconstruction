@@ -1,5 +1,3 @@
-
-
 from dataclasses import dataclass
 import numpy as np
 
@@ -14,4 +12,7 @@ class Config:
     depth_max: float
     depth_min: float
     fragment_size: int = 8
-    debug: bool = False
+    max_correspondence_distance: float = 0.015
+    icp_iterations: int = 100
+    register_point_clouds: bool = False
+    match_images: bool = False
