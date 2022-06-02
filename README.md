@@ -1,11 +1,10 @@
 # Remy Robotics - 3D Reconstruction
 ## Pablo Arcos
 
-We are asked to reconstruct a 3D model from a series of images and depth resources gathered with a Realsense D435 camera. This is a typical Structure from Motion (SfM) problem with color and depth images. Normally this doesn't include motion but in this case we have the complete trajectory.
+We are asked to reconstruct a 3D model from a series of color & depth images gathered with a Realsense D435 camera. This is a typical Structure from Motion (SfM) problem with color and depth images. Normally this doesn't include motion but in this case we have the complete trajectory.
 
 ![Problem data](/docs/problem-data.jpg) 
 ![Reconstructed data](/docs/reconstructed.png) 
-![Postprocessed data](/docs/postprocessed.jpg)
 
 ## How to install?
 To install dependencies run `pip install -r requirements.txt`.

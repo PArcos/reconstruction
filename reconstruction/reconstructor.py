@@ -5,10 +5,7 @@ from reconstruction.point_cloud_registrator import PointCloudRegistrator
 from reconstruction.dataset import Dataset
 from reconstruction.config import Config
 import numpy as np
-import cv2 as cv
-from itertools import accumulate
 from more_itertools import windowed, pairwise
-from reconstruction.utils.visualization import visualize_trajectory
 from tqdm import tqdm
 import logging
 
