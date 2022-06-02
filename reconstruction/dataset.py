@@ -3,8 +3,11 @@ import numpy as np
 from scipy.spatial.transform import Rotation
 from pydantic import BaseModel
 from datetime import datetime
-from glob import glob
 from parse import parse
+import logging 
+
+log = logging.getLogger(__name__)
+log.setLevel(logging.WARNING)
 
 class Position(BaseModel):
     x: float
@@ -37,6 +40,10 @@ class Dataset(BaseModel):
 
     @staticmethod
     def read(base_dir: str):
+        """
+        Reads a dataset from a directory. Expects a log, rgb and depth files.
+        """
+        log.debug(f"Reading dataset from {base_dir}")
         trajectory = _read_log(f"{base_dir}/scanner.log")
         frames = []
         for t in trajectory:
