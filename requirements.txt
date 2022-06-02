@@ -1,7 +1,7 @@
-parse==1.19
-open3d==0.15
-opencv==4.5
-ipyplot==1.1
+parse==1.19.0
+open3d==0.15.1
+opencv-python==4.5.5.64
+ipyplot==1.1.1
 more_itertools==8.13
 tqdm==4.60
 typer==0.3
